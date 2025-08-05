@@ -15,7 +15,7 @@ class YoutubeController {
       const info = await ytdl.getInfo(url);
       const videoDetails = info.videoDetails;
 
-      const downloadLink = `/api/v1/download?url=${encodeURIComponent(url)}&format=${format}`;
+      const downloadLink = `${req.protocol}://${req.get('host')}/api/v1/download?url=${encodeURIComponent(url)}&format=${format}`;
 
       // Get file size from a format
       let bestFormat;

@@ -139,8 +139,10 @@
       videoInfoDiv.innerHTML = '<div class="text-center text-gray-500">Fetching video information...</div>';
 
       try {
-        // Send URL and format to the server
-        const response = await fetch('/api/v1/info', {
+        // Dynamically get the base URL for the current host
+        const baseUrl = window.location.origin;
+
+        const response = await fetch(`${baseUrl}/api/v1/info`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ url: youtubeUrl, format: format })
