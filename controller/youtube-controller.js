@@ -38,6 +38,7 @@ class YoutubeController {
       });
 
     } catch (error) {
+      console.log(error)
       res.status(500).json({ error: 'Failed to fetch video information. Please try a different URL.' });
     }
   }
@@ -63,6 +64,7 @@ class YoutubeController {
       });
 
     } catch (error) {
+      console.log(error)
       res.status(500).send('Failed to start download stream.');
     }
   }

@@ -16,6 +16,11 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api/v1', handlerRoute)
+app.use((req, res) => {
+  return res.status(404).json({
+    path: `Path url not found ${req.originalUrl}`
+  })
+})
 
 
 app.listen(port, () => {
