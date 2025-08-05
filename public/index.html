@@ -181,7 +181,6 @@
         messageDiv.className = 'mt-4 text-center text-sm font-medium text-green-500';
 
       } catch (error) {
-        console.error('Error:', error);
         messageDiv.textContent = `An error occurred: ${error.message}. Please try again.`;
         messageDiv.className = 'mt-4 text-center text-sm font-medium text-red-500';
         videoInfoDiv.innerHTML = '<div class="text-center text-gray-500">Failed to fetch video information.</div>';
